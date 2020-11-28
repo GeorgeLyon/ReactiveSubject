@@ -22,6 +22,8 @@ public extension ReactiveSubject {
     for subscription in subscriptions.subscriptions.values {
       subscription.send(completion: completion)
     }
+    /// Clear all subscriptions
+    subscriptions = Subscriptions()
   }
   
   func send(subscription: Combine.Subscription) {
